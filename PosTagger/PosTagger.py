@@ -1,5 +1,9 @@
 from abc import abstractmethod
 
+from Corpus.Sentence import Sentence
+
+from PosTagger.PosTaggedCorpus import PosTaggedCorpus
+
 
 class PosTagger:
 
@@ -8,5 +12,5 @@ class PosTagger:
         pass
 
     @abstractmethod
-    def posTag(self, sentence: Sentence):
+    def posTag(self, sentence: Sentence) -> Sentence:
         pass
