@@ -7,6 +7,7 @@ from DataStructure.CounterHashMap import CounterHashMap
 from PosTagger.PosTaggedWord import PosTaggedWord
 import re
 
+
 class PosTaggedCorpus(Corpus):
 
     __tagList: CounterHashMap
@@ -20,7 +21,7 @@ class PosTaggedCorpus(Corpus):
     fileName : str
         Name of the corpus file.
     """
-    def __init__(self, fileName:None):
+    def __init__(self, fileName:str = None):
         self.sentences = []
         self.wordList = CounterHashMap()
         self.__tagList = CounterHashMap()

@@ -20,20 +20,20 @@ class NaivePosTagger(PosTagger):
         Traning data for the tagger.
     """
     def train(self, corpus: PosTaggedCorpus):
-        map = {}
+        wordMap = {}
         for i in range(corpus.sentenceCount()):
             s = corpus.getSentence(i)
             for j in range(s.wordCount()):
                 word = corpus.getSentence(i).getWord(j)
-                if word in map:
-                    map[word.getName()].put(word.getTag())
+                if word in wordMap:
+                    wordMap[word.getName()].put(word.getTag())
                 else:
                     counterMap = CounterHashMap()
                     counterMap.put(word.getTag())
-                    map[word.getName()] = counterMap
+                    wordMap[word.getName()] = counterMap
         self.__maxMap = {}
-        for word in map:
-            self.__maxMap[word] = map[word].max()
+        for word in wordMap:
+            self.__maxMap[word] = wordMap[word].max()
 
     """
     Test method for the Naive pos tagger. For each word, the method chooses the maximum a posterior tag from all
