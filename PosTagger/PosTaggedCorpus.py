@@ -27,7 +27,7 @@ class PosTaggedCorpus(Corpus):
         self.__tagList = CounterHashMap()
         newSentence = Sentence()
         if fileName is not None:
-            inputFile = open(fileName)
+            inputFile = open(fileName, "r", encoding="utf8")
             lines = inputFile.readlines()
             for line in lines:
                 words = re.split("[\t\n ]", line)
