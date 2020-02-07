@@ -26,7 +26,8 @@ class HmmPosTagger(PosTagger):
             emittedSymbols.append([])
             for j in range(corpus.getSentence(i).wordCount()):
                 word = corpus.getSentence(i).getWord(j)
-                emittedSymbols[i].append(word.getTag())
+                if isinstance(word, PosTaggedWord):
+                    emittedSymbols[i].append(word.getTag())
         self.__hmm = Hmm1(set(corpus.getTagList()), emittedSymbols, corpus.getAllWordsAsList())
 
     """

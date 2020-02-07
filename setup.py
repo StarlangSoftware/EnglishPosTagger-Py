@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='NlpToolkit-PosTagger',
-    version='1.0.2',
+    version='1.0.3',
     packages=['PosTagger'],
     url='https://github.com/olcaytaner/PosTagger-Py',
     license='',

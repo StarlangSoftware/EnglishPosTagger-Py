@@ -25,12 +25,13 @@ class NaivePosTagger(PosTagger):
             s = corpus.getSentence(i)
             for j in range(s.wordCount()):
                 word = corpus.getSentence(i).getWord(j)
-                if word in wordMap:
-                    wordMap[word.getName()].put(word.getTag())
-                else:
-                    counterMap = CounterHashMap()
-                    counterMap.put(word.getTag())
-                    wordMap[word.getName()] = counterMap
+                if isinstance(word, PosTaggedWord):
+                    if word in wordMap:
+                        wordMap[word.getName()].put(word.getTag())
+                    else:
+                        counterMap = CounterHashMap()
+                        counterMap.put(word.getTag())
+                        wordMap[word.getName()] = counterMap
         self.__maxMap = {}
         for word in wordMap:
             self.__maxMap[word] = wordMap[word].max()
