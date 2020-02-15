@@ -14,21 +14,21 @@ class DummyPosTagger(PosTagger):
         corpusTagList = corpus.getTagList()
         self.__tagList = list(corpusTagList)
 
-    """
-    Test method for the Dummy pos tagger. For each word, the method chooses randomly a tag from all possible
-    tag list.
-
-    PARAMETERS
-    ----------
-    sentence : Sentence
-        Sentence to be tagged.
-        
-    RETURNS
-    -------
-    Sentence
-        Annotated (tagged) sentence.
-    """
     def posTag(self, sentence: Sentence) -> Sentence:
+        """
+        Test method for the Dummy pos tagger. For each word, the method chooses randomly a tag from all possible
+        tag list.
+
+        PARAMETERS
+        ----------
+        sentence : Sentence
+            Sentence to be tagged.
+
+        RETURNS
+        -------
+        Sentence
+            Annotated (tagged) sentence.
+        """
         result = Sentence()
         for i in range(sentence.wordCount()):
             index = random.randint(0, len(self.__tagList) - 1)

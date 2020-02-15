@@ -12,16 +12,16 @@ class PosTaggedCorpus(Corpus):
 
     __tagList: CounterHashMap
 
-    """
-    A constructor of PosTaggedCorpus which initializes the sentences of the corpus, the word list of
-    the corpus, and all possible tags.
-
-    PARAMETERS
-    ----------
-    fileName : str
-        Name of the corpus file.
-    """
     def __init__(self, fileName:str = None):
+        """
+        A constructor of PosTaggedCorpus which initializes the sentences of the corpus, the word list of
+        the corpus, and all possible tags.
+
+        PARAMETERS
+        ----------
+        fileName : str
+            Name of the corpus file.
+        """
         self.sentences = []
         self.wordList = CounterHashMap()
         self.__tagList = CounterHashMap()
@@ -49,13 +49,13 @@ class PosTaggedCorpus(Corpus):
             if newSentence.wordCount() > 0:
                 self.addSentence(newSentence)
 
-    """
-    getTagList returns all possible tags as a set.
-
-    RETURNS
-    -------
-    set
-        Set of all possible tags.
-    """
     def getTagList(self) -> KeysView:
+        """
+        getTagList returns all possible tags as a set.
+
+        RETURNS
+        -------
+        set
+            Set of all possible tags.
+        """
         return self.__tagList.keys()
