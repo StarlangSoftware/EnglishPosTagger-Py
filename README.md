@@ -59,19 +59,19 @@ Detailed Description
 
 İngilizce pos tagging için kullanılan PosTagger'ı eğitmek için 
 
-	void train(PosTaggedCorpus corpus)
+	train(self, corpus: PosTaggedCorpus)
 	
 eğitilen PosTagger modelini kaydetmek için
 
-	void saveModel()
+	saveModel(self)
 	
 daha önce eğitilmiş bir PosTagger modelini yüklemek için
 
-	void loadModel()
+	loadModel(self)
 	
 ve yeni eğitilmiş veya yüklenmiş bir PosTagger modelini kullanarak bir cümleyi taglemek için
 
-	Sentence posTag(Sentence sentence)
+	posTag(self, sentence: Sentence) -> Sentence
 	
 metodu kullanılır.
 
