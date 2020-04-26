@@ -4,8 +4,8 @@ This is a tool meant for tagging words with their part-of-speech, a grammatical 
 
 For Developers
 ============
-You can also see either [Java](https://github.com/olcaytaner/EnglishPosTagger) 
-or [C++](https://github.com/olcaytaner/EnglishPosTagger-CPP) repository.
+You can also see [Java](https://github.com/starlangsoftware/EnglishPosTagger), [C++](https://github.com/starlangsoftware/EnglishPosTagger-CPP), or [C#](https://github.com/starlangsoftware/EnglishPosTagger-CS) repository.
+
 ## Requirements
 
 * [Python 3.7 or higher](#python)
