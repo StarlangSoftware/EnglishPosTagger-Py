@@ -26,7 +26,7 @@ class NaivePosTagger(PosTagger):
             for j in range(s.wordCount()):
                 word = corpus.getSentence(i).getWord(j)
                 if isinstance(word, PosTaggedWord):
-                    if word in wordMap:
+                    if word.getName() in wordMap:
                         wordMap[word.getName()].put(word.getTag())
                     else:
                         counterMap = CounterHashMap()

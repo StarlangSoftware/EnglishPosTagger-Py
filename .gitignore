@@ -3,3 +3,6 @@
 /.idea/
 /bin/
 /dist/
+PosTagger/__pycache__/__init__.cpython-37.pyc
+PosTagger/__pycache__/PosTaggedCorpus.cpython-37.pyc
+PosTagger/__pycache__/PosTaggedWord.cpython-37.pyc
