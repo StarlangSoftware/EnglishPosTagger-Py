@@ -8,11 +8,11 @@ import random
 
 class DummyPosTagger(PosTagger):
 
-    __tagList: list
+    __tag_list: list
 
     def train(self, corpus: PosTaggedCorpus):
         corpusTagList = corpus.getTagList()
-        self.__tagList = list(corpusTagList)
+        self.__tag_list = list(corpusTagList)
 
     def posTag(self, sentence: Sentence) -> Sentence:
         """
@@ -31,6 +31,6 @@ class DummyPosTagger(PosTagger):
         """
         result = Sentence()
         for i in range(sentence.wordCount()):
-            index = random.randint(0, len(self.__tagList) - 1)
-            result.addWord(PosTaggedWord(sentence.getWord(i).getName(), self.__tagList[index]))
+            index = random.randint(0, len(self.__tag_list) - 1)
+            result.addWord(PosTaggedWord(sentence.getWord(i).getName(), self.__tag_list[index]))
         return result

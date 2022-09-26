@@ -8,7 +8,7 @@ from PosTagger.PosTagger import PosTagger
 
 class NaivePosTagger(PosTagger):
 
-    __maxMap: dict
+    __max_map: dict
 
     def train(self, corpus: PosTaggedCorpus):
         """
@@ -20,21 +20,21 @@ class NaivePosTagger(PosTagger):
         corpus : PosTaggedCorpus
             Training data for the tagger.
         """
-        wordMap = {}
+        word_map = {}
         for i in range(corpus.sentenceCount()):
             s = corpus.getSentence(i)
             for j in range(s.wordCount()):
                 word = corpus.getSentence(i).getWord(j)
                 if isinstance(word, PosTaggedWord):
-                    if word.getName() in wordMap:
-                        wordMap[word.getName()].put(word.getTag())
+                    if word.getName() in word_map:
+                        word_map[word.getName()].put(word.getTag())
                     else:
-                        counterMap = CounterHashMap()
-                        counterMap.put(word.getTag())
-                        wordMap[word.getName()] = counterMap
-        self.__maxMap = {}
-        for word in wordMap:
-            self.__maxMap[word] = wordMap[word].max()
+                        counter_map = CounterHashMap()
+                        counter_map.put(word.getTag())
+                        word_map[word.getName()] = counter_map
+        self.__max_map = {}
+        for word in word_map:
+            self.__max_map[word] = word_map[word].max()
 
     def posTag(self, sentence: Sentence) -> Sentence:
         """
@@ -53,5 +53,5 @@ class NaivePosTagger(PosTagger):
         """
         result = Sentence()
         for i in range(sentence.wordCount()):
-            result.addWord(PosTaggedWord(sentence.getWord(i).getName(), self.__maxMap[sentence.getWord(i).getName()]))
+            result.addWord(PosTaggedWord(sentence.getWord(i).getName(), self.__max_map[sentence.getWord(i).getName()]))
         return result

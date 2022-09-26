@@ -21,14 +21,14 @@ class HmmPosTagger(PosTagger):
         corpus : Corpus
             Training data for the tagger.
         """
-        emittedSymbols = []
+        emitted_symbols = []
         for i in range(corpus.sentenceCount()):
-            emittedSymbols.append([])
+            emitted_symbols.append([])
             for j in range(corpus.getSentence(i).wordCount()):
                 word = corpus.getSentence(i).getWord(j)
                 if isinstance(word, PosTaggedWord):
-                    emittedSymbols[i].append(word.getTag())
-        self.__hmm = Hmm1(set(corpus.getTagList()), emittedSymbols, corpus.getAllWordsAsList())
+                    emitted_symbols[i].append(word.getTag())
+        self.__hmm = Hmm1(set(corpus.getTagList()), emitted_symbols, corpus.getAllWordsAsList())
 
     def posTag(self, sentence: Sentence) -> Sentence:
         """
@@ -46,7 +46,7 @@ class HmmPosTagger(PosTagger):
             Annotated (tagged) sentence.
         """
         result = Sentence()
-        tagList = self.__hmm.viterbi(sentence.getWords())
+        tag_list = self.__hmm.viterbi(sentence.getWords())
         for i in range(sentence.wordCount()):
-            result.addWord(PosTaggedWord(sentence.getWord(i).getName(), tagList[i]))
+            result.addWord(PosTaggedWord(sentence.getWord(i).getName(), tag_list[i]))
         return result
