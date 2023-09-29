@@ -11,7 +11,7 @@ Video Lectures
 For Developers
 ============
 
-You can also see [Cython](https://github.com/starlangsoftware/EnglishPosTagger-Cy), [Java](https://github.com/starlangsoftware/EnglishPosTagger), [C++](https://github.com/starlangsoftware/EnglishPosTagger-CPP), [Swift](https://github.com/starlangsoftware/EnglishPosTagger-Swift), [Js](https://github.com/starlangsoftware/EnglishPosTagger-Js), or [C#](https://github.com/starlangsoftware/EnglishPosTagger-CS) repository.
+You can also see [Cython](https://github.com/starlangsoftware/EnglishPosTagger-Cy), [Java](https://github.com/starlangsoftware/EnglishPosTagger), [C++](https://github.com/starlangsoftware/EnglishPosTagger-CPP), [C](https://github.com/starlangsoftware/EnglishPosTagger-C), [Swift](https://github.com/starlangsoftware/EnglishPosTagger-Swift), [Js](https://github.com/starlangsoftware/EnglishPosTagger-Js), or [C#](https://github.com/starlangsoftware/EnglishPosTagger-CS) repository.
 
 ## Requirements
 
