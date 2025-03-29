@@ -1,4 +1,4 @@
-from collections import KeysView
+from typing import KeysView
 
 from Corpus.Corpus import Corpus
 from Corpus.Sentence import Sentence
@@ -23,7 +23,7 @@ class PosTaggedCorpus(Corpus):
             Name of the corpus file.
         """
         self.sentences = []
-        self.wordList = CounterHashMap()
+        self.word_list = CounterHashMap()
         self.__tag_list = CounterHashMap()
         new_sentence = Sentence()
         if fileName is not None:
